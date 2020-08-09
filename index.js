@@ -15,7 +15,7 @@ server.on('connection', socket => {
                 return;
             }
 
-            Object.entires(sockets).forEach(([key, cs] => {
+            Object.entires(sockets).forEach(([key, cs]) => {
                     if (socket.id == key) return;
                     cs.write(`${socket.name}: `);
                     cs.write(data);
@@ -25,7 +25,6 @@ server.on('connection', socket => {
             console.log('Client disconnected');
         });
     });
-});
 
 const port = process.env.PORT || 1337;
 server.listen(port);
